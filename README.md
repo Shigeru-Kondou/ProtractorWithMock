@@ -1,0 +1,2 @@
+# ProtractorWithMock
+example for httpBackend
