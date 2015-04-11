@@ -28,7 +28,7 @@
     <input type="text" id="nameInput" class="form-control" ng-model="name" />
     <label for="infoInput">Info</label>
     <input type="text" id="infoInput" class="form-control" ng-model="info" />
-    <button class="btn btn-primary" ng-click="index<0 ? create() : update()">{{ index<0 ? 'create' : 'update' }}</button>
+    <button id="createOrUpdate" class="btn btn-primary" ng-click="index<0 ? create() : update()">{{ index<0 ? 'create' : 'update' }}</button>
   </div>
 </div>
 
