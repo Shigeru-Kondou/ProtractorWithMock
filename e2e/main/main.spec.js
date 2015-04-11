@@ -1,5 +1,11 @@
 'use strict';
 
+var chai = require('chai');
+var chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
+/* jshint -W079 */
+var expect = chai.expect;
+
 describe('Main View', function() {
   var page;
 
@@ -8,9 +14,11 @@ describe('Main View', function() {
     page = require('./main.po');
   });
 
-  it('should include jumbotron with correct data', function() {
-    expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
-    expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
-    expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
+  it('Jumbotron に正しいデータが含まれる', function() {
+    expect(page.h1El.getText()).to.eventually.equal('\'Allo, \'Allo!');
+    expect(page.imgEl.getAttribute('src')).to.eventually.match(/assets\/images\/yeoman.png$/);
+    expect(page.imgEl.getAttribute('alt')).to.eventually.equal('I\'m Yeoman');
   });
+
+
 });
